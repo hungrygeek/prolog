@@ -1,0 +1,2 @@
+sum(0,0).
+sum(N,S) :- N is M+1, S is R+N, sum(M,R).

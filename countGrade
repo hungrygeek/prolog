@@ -1,0 +1,6 @@
+isFirst(C,Y,V) :- tGrade(C,Y,1),isFirst(C,Y,1),!. 
+isFirst(C,Y,V) :-tGrade(C,Y,2.1),isFirst(C,Y,0),!.
+isFirst(C,Y,V) :-tGrade(C,Y,2.2),isFirst(C,Y,0),!.
+isFirst(C,Y,V) :-tGrade(C,Y,3),isFirst(C,Y,0),!.
+countGrade(C,Fg) :- isFirst(C,'IA',A),isFirst(C,'IB',B),isFirst(C,'II',C),Nfg is A+B+C,countGrade(C,Nfg),!.
+countGrade(C) :- countGrade(C,0).

@@ -1,0 +1,5 @@
+permtobeword(A) :- perm(A,R),word(R).
+
+wordisperm(A) :- word(B),perm(B,A).
+
+pairword(A) :- perm(A,R),append(X,Y,R),word(X),word(Y).

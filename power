@@ -1,0 +1,9 @@
+
+
+
+power(_,0,1).
+power(X,Y,Z) :- power(X,Y1,Z1), Y1 is Y - 1, Z is Z1 * X.
+
+poweracc(_,0,A,A).
+poweracc(X,Y,A,Z) :- poweracc(X,Y1,A1,Z), Y1 is Y - 1, A1 is A * X.
+poweracc(X,Y,Z) :- poweracc(X,Y,1,Z).

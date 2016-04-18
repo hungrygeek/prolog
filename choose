@@ -1,0 +1,6 @@
+take([H|T],H,T).
+take([H|T],R,[H|S]) :- take(T,R,S).
+
+choose(0,L,R,S).
+choose(N,[H|T],R,S) :- N > 0, take(S,H,P), M is N-1, choose(M,T,[H|R],P).
+choose(N,[H|T],R,S) :- choose(N,T,R,S).

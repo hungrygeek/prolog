@@ -1,0 +1,9 @@
+prim(1,i).
+prim(X,Y) :- X1 is X-1,Y = s(Y1),prim(X1,Y1).
+
+plus(0,1,i).
+plus(0,B,C) :- plus(0,B1,C1), B1 is B-1, C = s(C1).
+plus(A,B,C) :- A1 is A-1, C = s(C1), plus(A1,B,C1).
+
+mult(1,B,C) :- mult(1,B,C1), prim(B,C1).
+mult(A,B,C) :- A1 is A-1,  prim(C2,C), plus(B,C2,C1), mult(A1,B,C1).

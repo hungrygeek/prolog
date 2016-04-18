@@ -1,0 +1,8 @@
+
+
+
+sumlist([],0).
+sumlist([H|T],S) :- sumlist(T,R) , S is R+H.
+
+sumlistlco([],A,A).
+sumlistlco([H|T],B,C) :- sumlistlco(T,D,C) , D is B+H.

@@ -1,0 +1,18 @@
+exist(A,(A,_,_,_,_)).
+exist(A,(_,A,_,_,_)).
+exist(A,(_,_,A,_,_)).
+exist(A,(_,_,_,A,_)).
+exist(A,(_,_,_,_,A)).
+
+right(A,B,(B,A,_,_,_)).
+right(A,B,(_,B,A,_,_)).
+right(A,B,(_,_,B,A,_)).
+right(A,B,(_,_,_,B,A)).
+
+
+middle(A,(_,_,A,_,_)).
+
+first(A,(A,_,_,_,_)).
+
+next(A,B) :- right(A,B,Houses).
+next(A,B) :- right(B,A,Houses).

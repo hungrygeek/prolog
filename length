@@ -1,0 +1,8 @@
+lenacc([],Acc,Acc).
+lenacc([_|T],Acc,R) :- 
+	B is Acc +1,
+	lenacc(T,B,R).
+lenacc(List,R) :- lenacc(List,0,R).
+
+len([],0).
+len([_|T],N) :- len(T,M),N is M+1.

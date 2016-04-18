@@ -1,0 +1,15 @@
+
+exsitF(C) :- tGrade(C,_,1).
+
+append([],A,A).
+append([H|T],A,[H|R]) :- append(T,A,R).
+
+memberoflist(A,[A|T]).
+memberoflist(A,[H|T]) :- memberoflist(A,T).
+
+len([],0).
+len([_|T],N) :- len(T,M),N is M+1.
+
+countFl(Nl) :- exsitF(C), not(memberoflist(C,Nl)),append(Nl,[C],R),countFl(R).
+
+countF(X) :- countFl(A), len(A,X).

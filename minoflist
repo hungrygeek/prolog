@@ -1,0 +1,4 @@
+min([H|T], Min) :- min(T, H, Min).
+
+min([], Min, Min).
+min([H|T], Min, Min1) :- ( H < Min ->  min(T, H, Min1); min(T, Min, Min1)).
